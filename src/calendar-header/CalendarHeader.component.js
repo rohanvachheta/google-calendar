@@ -7,7 +7,6 @@ import {
   StyledTitleRoot,
 } from "./CalendarHeader.styled";
 
-// change props
 const CalendarHeader = (props) => {
   return (
     <StyledCalendarHeader className="flex">
