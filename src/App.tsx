@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
+import { motion } from "framer-motion";
+import CalendarHeader from "./calendar-header/CalendarHeader.component";
 
 // moment get week days
 
@@ -43,7 +45,8 @@ function App() {
 
   // print weekdays and write with grid item
   return (
-    <div>
+    <motion.div style={{ padding: "8px" }}>
+      <CalendarHeader />
       <div>
         <button onClick={handleToday}>today</button>
       </div>
@@ -54,7 +57,7 @@ function App() {
             <button onClick={handleNext}>forward</button>
           </div>
           <div>{moment(date).format("MMMM YYYY")}</div>
-          <div className="small-grid">
+          <motion.div className="small-grid">
             {weekDays.map((day, index) => (
               <div className="grid-item" key={index}>
                 {day.slice(0, 1)}
@@ -66,9 +69,14 @@ function App() {
                 {day.format("DD")}
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
-        <div className="grid-weekDays">
+        <motion.div
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="grid-weekDays"
+          style={{ opacity: 0 }}
+        >
           {weekDays.map((day, index) => (
             <div className="grid-item" key={index}>
               {day}
@@ -84,9 +92,9 @@ function App() {
               </div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
