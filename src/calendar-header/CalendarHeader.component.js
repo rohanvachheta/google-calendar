@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {
+  StyledButton,
   StyledCalendarHeader,
   StyledIconRoot,
+  StyledMiddlepanel,
   StyledTitle,
   StyledTitleRoot,
 } from "./CalendarHeader.styled";
@@ -19,7 +21,6 @@ const CalendarHeader = (props) => {
         <img
           class="gb_tc gb_0d"
           src="//ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_5_2x.png#"
-          srcset="//ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_5_2x.png 2x ,//ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_5_2x.png# 1x"
           alt=""
           aria-hidden="true"
           height={40}
@@ -27,12 +28,21 @@ const CalendarHeader = (props) => {
         ></img>
         <StyledTitle>Calendar</StyledTitle>
       </StyledTitleRoot>
-      <div>2</div>
+      <div style={{ flex: "1 1 100%", display: "flex", alignItems: "center" }}>
+        <StyledMiddlepanel>
+          <StyledButton role="button">Today</StyledButton>
+        </StyledMiddlepanel>
+        <button>&#10092;</button>
+        <button style={{ marginLeft: "10px" }}>&#10093;</button>
+        <div style={{ marginLeft: "20px" }}> {props.date}</div>
+      </div>
       <div>3</div>
     </StyledCalendarHeader>
   );
 };
 
-CalendarHeader.propTypes = {};
+CalendarHeader.propTypes = {
+  date: PropTypes.string,
+};
 
 export default CalendarHeader;

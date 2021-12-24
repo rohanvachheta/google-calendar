@@ -46,7 +46,7 @@ function App() {
   // print weekdays and write with grid item
   return (
     <motion.div style={{ padding: "8px" }}>
-      <CalendarHeader />
+      <CalendarHeader date={moment(date).format("MMMM YYYY")} />
       <div>
         <button onClick={handleToday}>today</button>
       </div>

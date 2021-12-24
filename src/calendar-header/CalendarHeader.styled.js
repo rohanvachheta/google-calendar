@@ -50,3 +50,25 @@ export const StyledTitle = styled.span`
   top: -1.5px;
   vertical-align: middle;
 `;
+
+export const StyledMiddlepanel = styled.div`
+  display: table-cell;
+  vertical-align: middle;
+`;
+
+export const StyledButton = styled.div`
+  background-color: transparent;
+  border: 1px solid #dadce0;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 36px;
+  margin-right: 12px;
+  cursor: pointer;
+  padding: 7px 12px 5px 12px;
+
+  &:hover {
+    background-color: #f1f3f4;
+  }
+`;
